@@ -24,6 +24,7 @@ export { AppState };
     FormsModule,
     CommonModule,
     HttpModule,
+    RouterModule.forRoot([{path: '', redirectTo: '/airqualitydata', pathMatch: 'full'}]),
     StoreModule.provideStore(reducer),
     AirDataModule
   ],

@@ -1,3 +1,3 @@
 export class AirData {
-  testdata: string;
+  message: string;
 }

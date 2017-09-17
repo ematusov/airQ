@@ -20,15 +20,15 @@ export { AirDataActions, AirDataService }
 export { AirDataState } from './reducers/airdata.state';
 export { airdataReducer } from './reducers/airdata.reducer';
 
-// const routes: Routes = [
-//   {path: 'weather', component: WeatherDashComponent}
-// ];
+const routes: Routes = [
+  {path: 'airqualitydata', component: AirQualityDataComponent}
+];
 
 @NgModule({
   imports: [
     CommonModule,
     EffectsModule.run(AirDataEffects),
-    //RouterModule.forChild(routes),
+    RouterModule.forChild(routes),
   ],
   declarations: [
     AirQualityDataComponent

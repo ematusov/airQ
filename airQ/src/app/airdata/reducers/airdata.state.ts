@@ -1,7 +1,8 @@
 import { Map, List, Record } from 'immutable';
+import { AirData } from '../../core/model';
 
 export interface AirDataState extends Map<string, any> {
-    testData: string;
+    testData: AirData;
 }
 
 export const AirDataRecord = Record({
