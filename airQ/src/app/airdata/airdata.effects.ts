@@ -22,7 +22,7 @@ export class AirDataEffects {
     .ofType(AirDataActions.LOAD_AIR_DATA)
     .switchMap(action => {
       //const location = action.payload as string;
-        return this.api.airQualityData.testAPI('shanghai')
+        return this.api.airQualityData.testAPI('seattle')
         .map(res =>
           this.moduleActions.loadAirDataComplete(res)
         )

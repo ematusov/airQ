@@ -19,5 +19,4 @@ export class AirQualityDataComponent implements OnInit {
     })
     this.service.loadAirData();
   }
-
 }
