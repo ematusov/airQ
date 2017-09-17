@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-// import { APIModule } from './data-access/api.service.module';
+ import { APIModule } from './data/api.service.module';
 
-// export { APIService }  from './data-access/api.service';
+ export { APIService }  from './data/api.service';
 
 export * from './interfaces';
 
@@ -13,7 +13,8 @@ export * from './interfaces';
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    APIModule
       ],
   exports: [],
   declarations: []

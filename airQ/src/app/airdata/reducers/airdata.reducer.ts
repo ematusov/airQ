@@ -8,10 +8,10 @@ export function airdataReducer(state: AirDataState = initialState, action: Actio
     case AirDataActions.RESET_DATA_MODULE:
       return initialState;
 
-    // case WeatherActions.LOAD_WEATHER_FOR_LOCATION_COMPLETE:
-    //   return state.withMutations((ctx) => {
-    //     ctx.set('weather', action.payload);
-    //   }) as WeatherState;
+    case AirDataActions.LOAD_AIR_DATA_COMPLETE:
+      return state.withMutations((ctx) => {
+        ctx.set('testData', action.payload);
+      }) as AirDataState;
 
     default:
       return state;

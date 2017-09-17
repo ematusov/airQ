@@ -8,29 +8,30 @@ import { Store } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 
 import { AppState } from '../app.module';
-//import { APIService } from '../core/core.module';
+import { APIService } from '../core/core.module';
 
 
 import { AirDataActions } from './airdata.actions';
-
+import { AirData } from '../core/model';
 
 @Injectable()
 export class AirDataEffects {
 
-  // @Effect()
-  // loadWeatherForLocation$ = this.actions$
-  //   .ofType(WeatherActions.LOAD_WEATHER_FOR_LOCATION)
-  //   .switchMap(action => {
-  //     const location = action.payload as string;
-  //     return this.api.weather.getWeather(location)
-  //       .map(weather =>
-  //         this.moduleActions.loadWeatherForLocationComplete(weather)
-  //       )
-  //       .catch((error: any) => Observable.of(this.moduleActions.loadWeatherForLacationError(error, location)));
-  //   });
+  @Effect()
+  loadAirQualityData$ = this.actions$
+    .ofType(AirDataActions.LOAD_AIR_DATA)
+    .switchMap(action => {
+      //const location = action.payload as string;
+        return this.api.airQualityData.testAPI('shanghai')
+        .map(res =>
+          this.moduleActions.loadAirDataComplete(res)
+        )
+        .catch((error: any) => Observable.of(this.moduleActions.loadAirDataError(error)));
+    });
 
   constructor(
     private actions$: Actions,
+    private api: APIService,
     private moduleActions: AirDataActions,
     private store$: Store<AppState>
   ) { }

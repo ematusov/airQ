@@ -1,5 +1,7 @@
 import { Action } from '@ngrx/store';
 
+import { AirData } from '../core/model';
+
 export class AirDataActions {
 
   // must be unique identifier for all action module definitions.
@@ -18,28 +20,28 @@ export class AirDataActions {
     }
   }
 
-  // static readonly LOAD_WEATHER_FOR_LOCATION = WeatherActions.prependIdentifier('LOAD_WEATHER_FOR_LOCATION');
-  // static readonly LOAD_WEATHER_FOR_LOCATION_COMPLETE = WeatherActions.prependIdentifier('LOAD_WEATHER_FOR_LOCATION_COMPLETE');
-  // static readonly LOAD_WEATHER_FOR_LOCATION_ERROR = WeatherActions.prependIdentifier('LOAD_WEATHER_FOR_LOCATION_ERROR');
+  static readonly LOAD_AIR_DATA = AirDataActions.prependIdentifier('LOAD_AIR_DATA');
+  static readonly LOAD_AIR_DATA_COMPLETE = AirDataActions.prependIdentifier('LOAD_AIR_DATA_COMPLETE');
+  static readonly LOAD_AIR_DATA_ERROR = AirDataActions.prependIdentifier('LOAD_AIR_DATA_ERROR');
 
-  // loadWeatherForLocation(location: string): Action {
-  //   return {
-  //     type: WeatherActions.LOAD_WEATHER_FOR_LOCATION,
-  //     payload: location
-  //   };
-  // }
+   loadAirData(): Action {
+     return {
+       type: AirDataActions.LOAD_AIR_DATA,
+     }
+   }
 
-  // loadWeatherForLocationComplete(weather: Weather): Action {
-  //   return {
-  //     type: WeatherActions.LOAD_WEATHER_FOR_LOCATION_COMPLETE,
-  //     payload: weather
-  //   };
-  // }
+   loadAirDataComplete(res: AirData): Action {
+     return {
+       type: AirDataActions.LOAD_AIR_DATA_COMPLETE,
+       payload: res
+     }
+   }
 
-  // loadWeatherForLocationError(error: Response, location: string): Action {
-  //   return {
-  //     type: WeatherActions.LOAD_WEATHER_FOR_LOCATION_ERROR,
-  //     payload: { error: error, location: location }
-  //   }
-  // }
+   loadAirDataError(errorMessage: string): Action {
+     return {
+       type: AirDataActions.LOAD_AIR_DATA_ERROR,
+        payload: errorMessage
+     }
+   }
+
 }

@@ -1,3 +1,17 @@
 export class AirData {
-  message: string;
+   status: string;
+   data: {
+      aqi: number;
+      time: {
+         s: string;
+      };
+      city: {
+         name: string;
+         url: string;
+         geo: List<string>;
+      };
+      iaqi: {
+         pm25: string;
+      };
+   };
 }

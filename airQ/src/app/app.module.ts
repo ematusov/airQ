@@ -5,7 +5,8 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-//need core module
+
+import { CoreModule } from './core/core.module';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -26,7 +27,8 @@ export { AppState };
     HttpModule,
     RouterModule.forRoot([{path: '', redirectTo: '/airqualitydata', pathMatch: 'full'}]),
     StoreModule.provideStore(reducer),
-    AirDataModule
+    AirDataModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
