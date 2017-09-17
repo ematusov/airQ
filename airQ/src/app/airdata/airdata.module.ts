@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 import { Routes, RouterModule } from '@angular/router';
-
+import { MdCardModule } from '@angular/material'
 // pages
 import { AirQualityDataComponent } from './pages/airqualitypage.component'
 
@@ -29,6 +29,7 @@ const routes: Routes = [
     CommonModule,
     EffectsModule.run(AirDataEffects),
     RouterModule.forChild(routes),
+    MdCardModule
   ],
   declarations: [
     AirQualityDataComponent

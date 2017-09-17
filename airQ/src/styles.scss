@@ -2,8 +2,20 @@
 
 $color-primary: #355C7D;
 $header-primary: #F8B195;
+$md-card-primary: #6C5B7B;
 
 body {
   background-color: $color-primary;
   font-family: 'Lato', sans-serif;
+  margin: 0px;
+}
+
+md-card {
+  background-color: $md-card-primary;
+}
+
+h1 {
+  text-align: center;
+  color: $header-primary;
+
 }

@@ -41,6 +41,9 @@ export { AppState };
     CoreModule
   ],
   providers: [],
+  exports: [
+    MdCardModule
+  ],
   bootstrap: [AppComponent]
 })
 
