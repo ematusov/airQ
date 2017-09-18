@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -8,7 +9,7 @@ import { AppComponent } from './app.component';
 
 
 //material imports
-import { MdButtonModule, MdToolbarModule, MdCardModule } from '@angular/material';
+import { MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule } from '@angular/material';
 
 import { CoreModule } from './core/core.module';
 
@@ -28,12 +29,14 @@ export { AppState };
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     CommonModule,
     HttpModule,
     MdButtonModule,
     MdToolbarModule,
     MdCardModule,
+    MdInputModule,
     RouterModule.forRoot([{path: '', redirectTo: '/airqualitydata', pathMatch: 'full'}]),
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
