@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 
 
 //material imports
-import { MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule } from '@angular/material';
+import { MatButtonModule, MatToolbarModule, MatCardModule, MatInputModule } from '@angular/material';
 
 import { CoreModule } from './core/core.module';
 
@@ -33,10 +33,10 @@ export { AppState };
     FormsModule,
     CommonModule,
     HttpModule,
-    MdButtonModule,
-    MdToolbarModule,
-    MdCardModule,
-    MdInputModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
     RouterModule.forRoot([{path: '', redirectTo: '/airqualitydata', pathMatch: 'full'}]),
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
@@ -45,7 +45,7 @@ export { AppState };
   ],
   providers: [],
   exports: [
-    MdCardModule
+    MatCardModule
   ],
   bootstrap: [AppComponent]
 })
