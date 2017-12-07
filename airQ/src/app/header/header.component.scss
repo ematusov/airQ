@@ -1,16 +1,17 @@
+@import '../../styles.scss';
 
-img {
-  height: 50px;
-  padding-left: 20px;
+.header mat-card {
+  background-color: $header-primary;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 5%;
 }
 
-.icons {
-  padding-top: 10px;
+h3 {
   text-align: center;
+  color: white;
 }
 
-.header {
-  width: 100%;
-  background-color: #C06C84;
-  height: 70px;
+h1 {
+  font-size: 50px;
 }
