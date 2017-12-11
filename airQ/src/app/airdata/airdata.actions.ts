@@ -2,46 +2,42 @@ import { Action } from '@ngrx/store';
 
 import { AirData } from '../core/model';
 
-export class AirDataActions {
+  export const LOAD_AIR_DATA = ' [airdata] LOAD_AIR_DATA';
+  export const LOAD_AIR_DATA_COMPLETE = '[airdata] LOAD_AIR_DATA_COMPLETE';
+  export const LOAD_AIR_DATA_ERROR = ' [airdata] LOAD_AIR_DATA_ERROR';
 
-  // must be unique identifier for all action module definitions.
-  static readonly ACTION_IDENTIFIER = '[AirData]';
-
-  static prependIdentifier(actionName: string): string {
-    return AirDataActions.ACTION_IDENTIFIER + ' ' + actionName;
+    /**
+     * Loading Air Data
+     * @class LoadAirData
+     * @implements {Action}
+     */
+  export class LoadAirData implements Action {
+    readonly type = LOAD_AIR_DATA;
+    constructor () {};
   }
 
-  // tslint:disable:member-ordering
-  static readonly RESET_DATA_MODULE = AirDataActions.prependIdentifier('RESET_DATA_MODULE');
-
-  resetModuleState(): Action {
-    return {
-      type: AirDataActions.RESET_DATA_MODULE
-    }
+      /**
+     * Loading Air Data Success
+     * @class LoadAirDataSuccess
+     * @implements {Action}
+     */
+  export class LoadAirDataComplete implements Action {
+    readonly type = LOAD_AIR_DATA_COMPLETE;
+    constructor(public payload: { airdata: AirData}) {};
   }
 
-  static readonly LOAD_AIR_DATA = AirDataActions.prependIdentifier('LOAD_AIR_DATA');
-  static readonly LOAD_AIR_DATA_COMPLETE = AirDataActions.prependIdentifier('LOAD_AIR_DATA_COMPLETE');
-  static readonly LOAD_AIR_DATA_ERROR = AirDataActions.prependIdentifier('LOAD_AIR_DATA_ERROR');
+      /**
+     * Loading Air Data Error
+     * @class LoadAirDataError
+     * @implements {Action}
+     */
+  export class LoadAirDataError implements Action {
+    readonly type = LOAD_AIR_DATA_ERROR;
+    constructor(public payload: { error: Error}) {};
+  }
 
-   loadAirData(): Action {
-     return {
-       type: AirDataActions.LOAD_AIR_DATA,
-     }
-   }
 
-   loadAirDataComplete(res: AirData): Action {
-     return {
-       type: AirDataActions.LOAD_AIR_DATA_COMPLETE,
-       payload: res
-     }
-   }
-
-   loadAirDataError(errorMessage: string): Action {
-     return {
-       type: AirDataActions.LOAD_AIR_DATA_ERROR,
-        payload: errorMessage
-     }
-   }
-
-}
+export type Actions
+  = LoadAirData
+  | LoadAirDataComplete
+  | LoadAirDataError;
