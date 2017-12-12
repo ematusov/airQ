@@ -10,13 +10,13 @@ import { AirQualityDataComponent } from './pages/airqualitypage.component'
 // components
 
 // state
-import { AirDataActions } from './airdata.actions';
+import * as airDataActions from './airdata.actions';
 import { AirDataEffects } from './airdata.effects';
 
 import { AirDataService } from './airdata.service';
 
 // exports
-export { AirDataActions, AirDataService }
+export { airDataActions, AirDataService }
 export { AirDataState } from './reducers/airdata.state';
 export { airdataReducer } from './reducers/airdata.reducer';
 
