@@ -23,7 +23,7 @@ import { AirData } from '../core/model';
      */
   export class LoadAirDataComplete implements Action {
     readonly type = LOAD_AIR_DATA_COMPLETE;
-    constructor(public payload: { airdata: AirData}) {};
+    constructor(public payload: any) {};
   }
 
       /**
