@@ -27,7 +27,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    EffectsModule.run(AirDataEffects),
+    EffectsModule.forRoot([
+      AirDataEffects
+    ]),
     RouterModule.forChild(routes),
     MatCardModule
   ],

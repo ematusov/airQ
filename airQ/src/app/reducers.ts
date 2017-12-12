@@ -39,13 +39,13 @@ const reducers = {
     airdata: airdataReducer
 }
 
-const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(reducers);
-const productionReducer: ActionReducer<AppState> = combineReducers(reducers);
+// const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(reducers);
+// const productionReducer: ActionReducer<AppState> = combineReducers(reducers);
 
-export function reducer(state: any, action: any) {
-  if (environment.production) {
-    return productionReducer(state, action);
-  } else {
-    return developmentReducer(state, action);
-  }
-}
+// export function reducer(state: any, action: any) {
+//   if (environment.production) {
+//     return productionReducer(state, action);
+//   } else {
+//     return developmentReducer(state, action);
+//   }
+// }

@@ -14,7 +14,6 @@ import { MatButtonModule, MatToolbarModule, MatCardModule, MatInputModule } from
 import { CoreModule } from './core/core.module';
 
 import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AirDataModule } from './airdata/airdata.module';
 
@@ -38,8 +37,7 @@ export { AppState };
     MatCardModule,
     MatInputModule,
     RouterModule.forRoot([{path: '', redirectTo: '/airqualitydata', pathMatch: 'full'}]),
-    StoreModule.provideStore(reducer),
-    StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    StoreModule.forRoot(reducer),
     AirDataModule,
     CoreModule
   ],
