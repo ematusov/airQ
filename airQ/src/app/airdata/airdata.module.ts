@@ -16,7 +16,7 @@ import { AirDataEffects } from './airdata.effects';
 import { AirDataService } from './airdata.service';
 
 // exports
-export { airDataActions, AirDataService }
+export { AirDataService }
 export { AirDataState } from './reducers/airdata.state';
 export { airdataReducer } from './reducers/airdata.reducer';
 
@@ -37,8 +37,7 @@ const routes: Routes = [
     AirQualityDataComponent
   ],
   providers: [
-    AirDataService,
-    AirDataActions
-  ]
+    AirDataService
+    ]
 })
 export class AirDataModule { }

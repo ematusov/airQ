@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 //material imports
@@ -38,6 +39,9 @@ export { AppState };
     MatInputModule,
     RouterModule.forRoot([{path: '', redirectTo: '/airqualitydata', pathMatch: 'full'}]),
     StoreModule.forRoot(reducer),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25 // Retains last 25 states
+    }),
     AirDataModule,
     CoreModule
   ],

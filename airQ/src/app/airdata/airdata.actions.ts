@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-
 import { AirData } from '../core/model';
 
   export const LOAD_AIR_DATA = ' [airdata] LOAD_AIR_DATA';
@@ -23,7 +22,7 @@ import { AirData } from '../core/model';
      */
   export class LoadAirDataComplete implements Action {
     readonly type = LOAD_AIR_DATA_COMPLETE;
-    constructor(public payload: any) {};
+    constructor(public payload: AirData) {};
   }
 
       /**
@@ -37,7 +36,7 @@ import { AirData } from '../core/model';
   }
 
 
-export type Actions
+export type AirDataActions
   = LoadAirData
   | LoadAirDataComplete
   | LoadAirDataError;
