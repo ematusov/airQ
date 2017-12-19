@@ -9,7 +9,6 @@ export function airdataReducer(state: AirDataState = initialState, action: AirDa
   switch (action.type) {
 
     case AirDataActionTypes.LOAD_AIR_DATA_COMPLETE:
-      console.log("reducer says hello???");
       return { ...state,
         testData: action.payload,
       };

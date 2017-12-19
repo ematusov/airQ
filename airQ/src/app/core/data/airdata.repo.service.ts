@@ -19,7 +19,6 @@ export class AirDataRepoService {
   constructor(private http: Http) { }
 
   testAPI(location): Observable<AirData> {
-    console.log("hello?");
     return this.http.get(this.serviceUrls.byName(location))
                     .map(this.transformData)
                     .catch(this.handleError);
