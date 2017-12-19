@@ -14,22 +14,30 @@ import { APIService } from '../core/core.module';
 
 import { AirData } from '../core/model';
 
-// importing administrator actions
-import * as airDataActions from './airdata.actions';
+import {
+  AirDataActions,
+  AirDataActionTypes,
+  LoadAirData,
+  LoadAirDataComplete,
+  LoadAirDataError
+ } from './airdata.actions';
+
+ import * as AirDataActionMethods from './airdata.effects';
 
 @Injectable()
 export class AirDataEffects {
 
   @Effect()
   loadAirQualityData$: Observable<Action> = this.actions$
-    .ofType('LOAD_AIR_DATA')
+    .ofType(AirDataActionTypes.LOAD_AIR_DATA)
     .switchMap(action => {
+
       //const location = action.payload as string;
         return this.api.airQualityData.testAPI('here')
         .map(airData =>
-          new airDataActions.LoadAirDataComplete(airData)
+          new LoadAirDataComplete(airData)
         )
-        .catch((error: any) => Observable.of(new airDataActions.LoadAirDataError(error)));
+        .catch((error: any) => Observable.of(new LoadAirDataError(error)));
     });
 
   constructor(

@@ -1,4 +1,4 @@
-import { ActionReducer } from '@ngrx/store';
+import { ActionReducer, ActionReducerMap } from '@ngrx/store';
 import { compose } from '@ngrx/store';
 import { storeFreeze } from "ngrx-store-freeze";
 
@@ -27,7 +27,7 @@ export interface AppState {
     airdata: AirDataState;
 }
 
-const reducers = {
+export const reducers = {
     airdata: airdataReducer
 }
 

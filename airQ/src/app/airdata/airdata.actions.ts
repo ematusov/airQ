@@ -1,9 +1,11 @@
 import { Action } from '@ngrx/store';
 import { AirData } from '../core/model';
 
-  export const LOAD_AIR_DATA = ' [airdata] LOAD_AIR_DATA';
-  export const LOAD_AIR_DATA_COMPLETE = '[airdata] LOAD_AIR_DATA_COMPLETE';
-  export const LOAD_AIR_DATA_ERROR = ' [airdata] LOAD_AIR_DATA_ERROR';
+export enum AirDataActionTypes {
+  LOAD_AIR_DATA = '[AirData] LOAD_AIR_DATA',
+  LOAD_AIR_DATA_COMPLETE = '[AirData] LOAD_AIR_DATA_COMPLETE',
+  LOAD_AIR_DATA_ERROR = '[AirData] LOAD_AIR_DATA_ERROR',
+}
 
     /**
      * Loading Air Data
@@ -11,7 +13,7 @@ import { AirData } from '../core/model';
      * @implements {Action}
      */
   export class LoadAirData implements Action {
-    readonly type = LOAD_AIR_DATA;
+    readonly type = AirDataActionTypes.LOAD_AIR_DATA;
     constructor () {};
   }
 
@@ -21,8 +23,8 @@ import { AirData } from '../core/model';
      * @implements {Action}
      */
   export class LoadAirDataComplete implements Action {
-    readonly type = LOAD_AIR_DATA_COMPLETE;
-    constructor(public payload: AirData) {};
+    readonly type = AirDataActionTypes.LOAD_AIR_DATA_COMPLETE;
+    constructor(public payload: any) {};
   }
 
       /**
@@ -31,7 +33,7 @@ import { AirData } from '../core/model';
      * @implements {Action}
      */
   export class LoadAirDataError implements Action {
-    readonly type = LOAD_AIR_DATA_ERROR;
+    readonly type = AirDataActionTypes.LOAD_AIR_DATA_ERROR;
     constructor(public payload: { error: Error}) {};
   }
 

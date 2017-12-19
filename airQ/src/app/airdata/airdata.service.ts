@@ -6,7 +6,7 @@ import { List } from 'immutable';
 import { AirData } from '../core/model'
 import { AppState } from '../app.module';
 
-import * as airDataActions from './airdata.actions';
+import * as AirDataActions from './airdata.actions';
 
 import {
   getAirData
@@ -21,6 +21,6 @@ export class AirDataService {
     }
 
     loadAirData() {
-      this.store$.dispatch(new airDataActions.LoadAirData());
+      this.store$.dispatch(new AirDataActions.LoadAirData());
     }
 }

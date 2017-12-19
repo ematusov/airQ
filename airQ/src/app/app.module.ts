@@ -18,7 +18,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { AirDataModule } from './airdata/airdata.module';
 
-import { AppState, reducer } from './reducers';
+import { AppState, reducers } from './reducers';
 import { HeaderComponent } from './header/header.component';
 export { AppState };
 
@@ -38,7 +38,7 @@ export { AppState };
     MatCardModule,
     MatInputModule,
     RouterModule.forRoot([{path: '', redirectTo: '/airqualitydata', pathMatch: 'full'}]),
-    StoreModule.forRoot(reducer),
+    StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25 // Retains last 25 states
     }),
